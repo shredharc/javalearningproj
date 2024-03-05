@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class UserController {
 	
 	@PostMapping("/login")
-	public ResponseEntity<String> validateUser(@RequestBody UserApp user) {
+	public ResponseEntity<String> validateUser(@RequestBody User user) {
 		if (user.getUsername().equalsIgnoreCase("sree") && user.getPassword().equalsIgnoreCase("test")) {
 			System.out.println("UserController.validateUser() - login success");
 			return new ResponseEntity<String>("{\"status\" : \"Login Successful\"}", HttpStatus.OK);
